@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-
+/* eslint-disable no-unused-vars */
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import GameList from "./components/GameList";
+import DiceGame from "./components/DiceGame/DiceGame";
+import TicTacToe from "./components/TicTacToe/TicTacToe";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return ( 
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<GameList />} />
+        <Route path="/dice" element={<DiceGame />} />
+        <Route path="/tic-tac-toe" element={<TicTacToe />} />
+      </Routes>
+    </BrowserRouter>
+   );
 }
 
 export default App;
